@@ -1,0 +1,22 @@
+{
+  "name": "cheesopedia-mongodb",
+  "version": "1.0.0",
+  "description": "cheesopedia.com, by Nigel Aukland",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nigelaukland/cheesopedia-mongodb.git"
+  },
+  "scripts": {
+    "start": "node ./app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nigel Aukland",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.6.0",
+    "morgan": "^1.7.0",
+    "uuid": "^2.0.2"
+  }
+}

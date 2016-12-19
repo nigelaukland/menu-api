@@ -13,15 +13,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public"))); 
 
-/*
-// Global declaration of the Couchbase server and bucket to be used, and message on connect
-module.exports.bucket = (new couchbase.Cluster(config.couchbase.server)).openBucket(config.couchbase.cheeseBucket);
-app.use(express.static(path.join(__dirname, "public")));
-module.exports.bucket.on('connect', function() {
-    console.log('Connected to cheeseBucket')
-});
-*/
-
 // Global declaration of mongodb database
 module.exports.db = mongoose.connect(config.mongoUrl);
 module.exports.db.connection.once('open', function () {

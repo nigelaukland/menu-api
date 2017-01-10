@@ -1,7 +1,7 @@
 var CheeseModel = require("../models/cheesemodel");
 var appRouter = function (app) {
 
-    app.delete("/api/cheeses", function (req, res) {
+    app.delete("/cheeses", function (req, res) {
         cheeseModel.remove({}, function (error, result) {
             if (error) {
                 return res.status(400).send(error);
@@ -10,7 +10,7 @@ var appRouter = function (app) {
         });
     });
     
-    app.delete("/api/cheeses/:cheeseId", function (req, res) {
+    app.delete("/cheeses/:cheeseId", function (req, res) {
         cheeseModel.remove({ _id: req.params.cheeseId }, function (error, result) {
             if (error) {
                 return res.status(400).send(error);
@@ -19,7 +19,7 @@ var appRouter = function (app) {
         });
     });
     
-    app.post("/api/cheeses", function (req, res) {
+    app.post("/cheeses", function (req, res) {
         if (!req.body.name) {
             return res.status(400).send({
                 "status": "error",
@@ -45,7 +45,7 @@ var appRouter = function (app) {
         });
     });
 
-    app.get("/api/cheeses", function (req, res) {
+    app.get("/cheeses", function (req, res) {
         cheeseModel.find({}, function (error, result) {
             if (error) {
                 return res.status(400).send(error);
@@ -54,7 +54,7 @@ var appRouter = function (app) {
         })
     });
 
-    app.get("/api/cheeses/:cheeseId", function (req, res) {
+    app.get("/cheeses/:cheeseId", function (req, res) {
         cheeseModel.findById(req.params.cheeseId, function (error, result) {
             if (error) {
                 return res.status(400).send(error);

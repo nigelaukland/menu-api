@@ -1,0 +1,39 @@
+#%RAML 1.0
+
+title: cheesopedia
+version: v1
+baseUri: http://api.cheesopedia.com
+types:
+  Cheese:
+    properties:
+      name: string
+      classification: string
+      description: string
+    example:
+      name: "Parmesan"
+      classification: "Hard"
+      description: "A hard, granular cheese better known as Parmiggiano-Reggiano"
+resourceTypes:
+  Collection:
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: <<item>>[]
+    post:
+      body:
+        application/json:
+          type: <<item>>
+  Member:
+    put:
+      body:
+        application/json:
+          type: <<item>>
+    delete:
+      responses:
+        204:
+/cheeses:
+  type:  { Collection: {item : Cheese} }
+  /{id}:
+    type:  { Member: {item : Cheese} }

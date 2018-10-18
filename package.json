@@ -1,10 +1,10 @@
 {
-  "name": "cheesopedia-api",
+  "name": "menu-api",
   "version": "1.0.0",
-  "description": "api.cheesopedia.com, by Nigel Aukland",
+  "description": "menu.nigelaukland.com, by Nigel Aukland",
   "repository": {
     "type": "git",
-    "url": "git://github.com/nigelaukland/cheesopedia-api.git"
+    "url": "git://github.com/nigelaukland/menu-api.git"
   },
   "scripts": {
     "start": "node ./app.js",

@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, "api")));
 // Global declaration of mongodb database
 module.exports.db = mongoose.connect(config.mongoUrl);
 module.exports.db.connection.once('open', function () {
-    console.log('Connected to mongodb:cheesopedia')
+    console.log('Connected to mongodb:menu')
 });
 
 // logging

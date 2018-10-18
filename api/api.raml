@@ -1,18 +1,18 @@
 #%RAML 1.0
 
-title: cheesopedia
+title: menu
 version: v1
-baseUri: http://api.cheesopedia.com
+baseUri: http://menu.nigelaukland.com
 types:
-  Cheese:
+  Recipe:
     properties:
       name: string
-      classification: string
       description: string
+      imagePath: string
     example:
-      name: "Parmesan"
-      classification: "Hard"
-      description: "A hard, granular cheese better known as Parmiggiano-Reggiano"
+      name: "Tandoori Tilapia"
+      description: "The recipe from James Martin"
+      imagePath: "https://i.dailymail.co.uk/i/pix/2011/03/11/article-0-0D30A321000005DC-986_468x419.jpg"
 resourceTypes:
   Collection:
     get:
@@ -33,7 +33,7 @@ resourceTypes:
     delete:
       responses:
         204:
-/cheeses:
-  type:  { Collection: {item : Cheese} }
+/recipes:
+  type:  { Collection: {item : Recipe} }
   /{id}:
-    type:  { Member: {item : Cheese} }
+    type:  { Member: {item : Recipe} }

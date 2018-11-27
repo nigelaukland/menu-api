@@ -2,17 +2,50 @@
 
 title: menu
 version: v1
-baseUri: http://menu.nigelaukland.com
+baseUri: http://menu-api.nigelaukland.com
 types:
-  Recipe:
+  recipe:
     properties:
+      id: string
       name: string
       description: string
       imagePath: string
     example:
+      id: "123456789abcdef"
       name: "Tandoori Tilapia"
       description: "The recipe from James Martin"
       imagePath: "https://i.dailymail.co.uk/i/pix/2011/03/11/article-0-0D30A321000005DC-986_468x419.jpg"
+  dayMenu:
+    properties:
+      id: string 
+      date: date-only
+      morningText: string
+      morningRecipeId: string 
+      lunchText: string
+      lunchRecipeId: string
+      dinnerText: string
+      dinnerRecipeId: string
+    example:
+      id: "123456789abcdef"
+      date: "2018-04-21"
+      morningText: "No need for breakfast"
+      morningRecipeId: "123456789abcdef" 
+      lunchText: "Picnic lunch"
+      lunchRecipeId: "123456789abcdef"
+      dinnerText: "Out for dinner"
+      dinnerRecipeId: "123456789abcdef"
+  menu:
+    properties:
+      id: string
+      name: string
+      startDate: date-only
+      dayMenus: dayMenu[]
+    example:
+      id: "123456789abcdef"
+      name: "Weekly menu"
+      startDate: "2018-04-21"
+      dayMenus: "text here TBC"
+
 resourceTypes:
   Collection:
     get:
@@ -33,7 +66,19 @@ resourceTypes:
     delete:
       responses:
         204:
-/recipes:
-  type:  { Collection: {item : Recipe} }
+
+/menus:
+  type: { Collecton: {item : menu} }
   /{id}:
-    type:  { Member: {item : Recipe} }
+    type: { Member: {item : menu} }
+
+/dayMenus:
+  type:  { Collection: {item: dayMenu} }
+  /{id}:
+    type:  { Member: {item: dayMenu} }
+
+/recipes:
+  type:  { Collection: {item : recipe} }
+  /{id}:
+    type:  { Member: {item : recipe} }
+

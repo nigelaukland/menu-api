@@ -4,8 +4,8 @@ module.exports = {
         // Redirect http traffic to https?
         'secureOnly':'no',
         // Set http port and https port
-        'port':'5000',
-        'secPort':'5443',
+        'port':'6000',
+        'secPort':'6443',
         // Set location of keys
         'key':'/bin/key.pem',
         'cert':'/bin/cert.pem'

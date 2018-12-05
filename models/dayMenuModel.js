@@ -37,6 +37,6 @@ var dayMenuSchema    = new mongoose.Schema({
 });
 
 // schema defined. Now we need to create and export a model to use it in other applications
-dayMenuModel = mongoose.model('dayMenus', recipeSchema);
+dayMenuModel = mongoose.model('dayMenus', dayMenuSchema);
 
 module.exports = dayMenuModel;

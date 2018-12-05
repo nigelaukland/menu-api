@@ -2,7 +2,7 @@
 var db              = require("../app").db;
 var mongoose        = require("mongoose");
 
-var MenuSchema    = new mongoose.Schema({
+var menuSchema    = new mongoose.Schema({
   name: {
     type: String,
     required: false,
@@ -13,7 +13,7 @@ var MenuSchema    = new mongoose.Schema({
     required: true
   },
   dayMenuIDs :{
-    type: [string],
+    type: [String],
     required: false
   }
 }, {

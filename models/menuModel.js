@@ -12,7 +12,7 @@ var menuSchema    = new mongoose.Schema({
     type: Date,
     required: true
   },
-  dayMenuIDs :{
+  dayMenuIds :{
     type: [String],
     required: false
   }

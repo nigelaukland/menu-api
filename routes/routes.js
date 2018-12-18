@@ -131,10 +131,10 @@ var appRouter = function (app) {
   */
 
   app.post("/menus", function (req, res) {
-    if (!req.body.date) {
+    if (!req.body.startDate) {
       return res.status(400).send({
         "status": "error",
-        "message": "A date is required"
+        "message": "A startDate is required"
       });
     }
     menuModel.create(req.body, function (error, result) {

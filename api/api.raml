@@ -39,12 +39,12 @@ types:
       id: string
       name: string
       startDate: date-only
-      dayMenus: dayMenu[]
+      dayMenuIds: string[]
     example:
       id: "123456789abcdef"
       name: "Weekly menu"
       startDate: "2018-04-21"
-      dayMenus: "text here TBC"
+      dayMenuIds: ["123456789abcdef", "123456789abcdef"]
 
 resourceTypes:
   Collection:
@@ -68,7 +68,7 @@ resourceTypes:
         204:
 
 /menus:
-  type: { Collecton: {item : menu} }
+  type: { Collection: {item : menu} }
   /{id}:
     type: { Member: {item : menu} }
 
